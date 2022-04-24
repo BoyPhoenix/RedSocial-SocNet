@@ -1,0 +1,516 @@
+/*my-socnet-style.css */
+/* Own stylesheet for SocNet */
+
+*{
+  margin: 0;
+  padding: 5;
+  box-sizing: border-box;
+
+}
+
+#containerIndex{
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 20px;
+  background-image: url(img/Wallpaper2.jpg);
+  background-repeat: no-repeat;
+  background-position: absolute;
+  height: 1500px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#containerProfile,#containerHome{
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 20px;
+  background-image: url(img/Wallpaper3.jpg);
+  background-repeat: no-repeat;
+  background-position: absolute;
+  height: 1500px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#container{
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 20px;
+  background-image: url(img/Wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-position: absolute;
+  height: 1500px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+p {
+  color: #F6F6F6;
+  font-size: 180%;
+  line-height: 60px;
+  padding-left: 30px;
+  animation-duration: 1.2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+li{
+  margin-top:15px;
+  color: #417EFF;
+  font-size: 120%;
+}
+
+@keyframes slideinh {
+  from {
+    margin-left: 30%;
+    width: 300%
+    overflow: hidden;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@keyframes slideinPH {
+  from {
+    margin-left: 50%;
+    width: 0%
+    overflow: hidden;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+h1#indexh{
+  background: #266cff;
+  font-size: 400%;
+  padding-top: 60px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation-duration: 1s;
+  animation-name: slideinh;
+  text-shadow: 0px 0px 9px #508AD3;
+}
+
+h1{
+  background: #266cff;
+  font-size: 400%;
+  padding-left: 20px;
+  margin-top: 70px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation-duration: 1s;
+  animation-name: slideinPH;
+  text-shadow: 0px 0px 9px #508AD3;
+}
+
+h1#h1Home{
+  background: #266cff;
+  font-size: 280%;
+  padding-left: 20px;
+  margin-top: 70px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  position: absolute;
+  left: 950px;
+  top: -60px;
+  animation-duration: 1s;
+  animation-name: slideinPH;
+  text-shadow: 0px 0px 9px #508AD3;
+}
+
+h1#h1Profile{
+  background: #266cff;
+  font-size: 280%;
+  padding-left: 20px;
+  margin-top: 70px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  position: absolute;
+  left: 950px;
+  top: -60px;
+  animation-duration: 1s;
+  animation-name: slideinPH;
+  text-shadow: 0px 0px 9px #508AD3;
+}
+
+form {
+  font-size: 100%;
+  padding: 5px;
+  position: relative;
+}
+
+nav a:hover{
+  color: #417EFF; /*light bronze*/
+}
+
+small{
+  color: #F6F6F6;
+}
+
+.inputError {
+    border: 4px solid #EED3D7;
+}
+
+.errorMessages {
+  font-size:150%;
+  color: #B40000;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+span#selected_friend {
+    color: #F6F6F6;
+    font-weight:bold;
+}
+
+.par {
+    background-color:#F6F6F6;
+    color:#000000;
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+}
+
+.impar {
+    background-color:#F6F6F6;
+    color:#000000;
+    border: 1px solid #a0a0a0;
+    border-radius: 5px;
+}
+
+.par:hover, .impar:hover {
+    background-color:#F6F6F6;
+    color:#00000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+
+}
+
+.seleccionado, .seleccionado:hover {
+    background-color:#417EFF;
+    color:#F6F6F6;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    padding: 0px 3px 4px 3px;
+    margin: 3px 1px 1px 1px;
+
+}
+
+@media screen and (min-width: 580px){
+     h1>span{
+        display: incline-block;
+     }
+     .container{
+        display: flex;
+     }
+     .designer{
+
+     }
+     nav ul{
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+     }
+
+     nav a{
+        color:#F6F6F6;
+        text-decoration: None;
+        font-weight: bolder;
+        font-size:150%;
+        text-align: center;
+        padding: 50px;
+        padding-left: 5px;
+        text-shadow: 0px 0px 9px #508AD3;
+
+     }
+
+     a img {
+        width: 2.5rem;
+     }
+
+     img#photoP{
+        position: absolute;
+        left: 300px;
+        top: -215px;
+        width: 245px;
+        height: 245px;
+        border-radius: 5%;
+     }
+
+     img#photoH{
+        position: relative;
+        left: -5px;
+        top: 5px;
+        border-radius:50%;
+        width: 40px;
+        height: 37px;
+     }
+
+     img#log{
+        position: relative;
+        left: 0px;
+        top: 4px;
+     }
+
+     img#msgImg{
+        position: relative;
+        left: 10px;
+        width: 190px;
+        height: 180px;
+        border-radius: 5px;
+     }
+
+     select#imageSelect{
+         border: none;
+         background: url(img/img-solid.png);
+         background-repeat: no-repeat;
+         position: absolute;
+         left: 410px;
+         top: 66px;
+         font-size: 80%;
+         color: transparent;
+         width: 38px;
+         height: 30px;
+     }
+
+     img#log1{
+        position: relative;
+        left: 0px;
+        top: 5px;
+     }
+
+     label {
+        font-size: 150%;
+        padding: 5px;
+        margin: 8px;
+        color: #F6F6F6;
+     }
+
+     label#cumple{
+        font-size: 150%;
+        padding: 5px;
+        margin: 8px;
+        color: #F70000;
+        position: relative;
+        left: 35px;
+        top: 75px;
+        text-shadow: 0px 0px 9px #508AD3;
+
+     }
+
+     input{
+         border: none;
+		 outline: 0px;
+         font-size:150%;
+         padding: 1px;
+         margin: 15px;
+         border-radius: 5px;
+     }
+
+     button#ocultarM{
+         border: none;
+         padding: 1px;
+         margin: 15px;
+         background: none;
+         position: absolute;
+         left: 490px;
+         top: 55px;
+     }
+
+     button#mostrarM{
+         border: none;
+         padding: 1px;
+         margin: 15px;
+         background: none;
+         position: absolute;
+         left: 445px;
+         top: 55px;
+     }
+     button#ocultarMA{
+         border: none;
+         padding: 1px;
+         margin: 15px;
+         background: none;
+         position: absolute;
+         left: 465px;
+         top: 48px;
+     }
+     button#mostrarMA{
+         border: none;
+         padding: 1px;
+         margin: 15px;
+         background: none;
+         position: absolute;
+         left: 420px;
+         top: 48px;
+     }
+
+     button#mostrarMA:hover, button#ocultarMA:hover, button#mostrarM:hover,  button#ocultarM:hover{
+         width: 35px;
+         height: 30px;
+
+     }
+     input#select_friend,#cancel_friend,#ok_friend{
+         border: none;
+		 outline: 0px;
+         font-size:120%;
+         padding: 1px;
+         margin: 15px;
+         margin-top:3px;
+         border-radius: 5px;
+     }
+
+      input#accept_submit{
+         border: none;
+		 outline: 0px;
+		 background: #50F37C;
+         font-size:120%;
+         padding: 1px;
+         margin: 15px;
+         margin-top:3px;
+         border-radius: 5px;
+         width: 258px;
+         height: 30px;
+     }
+
+     input#post_submit{
+         border: none;
+		 outline: 0px;
+         font-size:150%;
+         padding: 1px;
+         margin: 5px;
+         margin-top:20px;
+         border-radius: 5px;
+         position: relative;
+         left: 528px;
+         top: -50px;
+
+     }
+
+     select#photo{
+         background-color: #F6F6F6;
+         border-radius: 5px;
+         position: absolute;
+         left: 15px;
+         top: 50px;
+         font-size: 110%;
+         text-align: center;
+         width: 260px;
+         height: 28px;
+     }
+
+      select#friends{
+         background-color: #F6F6F6;
+         border-radius: 5px;
+         width: 531px;
+         height: 220px;
+     }
+
+     option{
+         font-size:120%;
+         margin: 18px;
+         border-radius: 3px;
+     }
+     input[type="checkbox"]{
+        -ms-transform: scale(2);
+        -moz-transform: scale(2);
+        -webkit-transform: scale(2);
+        -o-transform: scale(2);
+        transform: scale(2);
+        margin: 0px;
+     }
+
+     [type=submit] {
+        -webkit-appearance: button;
+     }
+
+     form#formProfile{
+        height: 800px;
+     }
+
+
+     div#divprofile-nick{
+        position: absolute;
+        left: 50px;
+        top: 150px;
+     }
+
+     div#divprofile-aceptar{
+        position: absolute;
+        left: 700px;
+        top: 563px;
+        font-size:130%;
+     }
+
+     div#divfecha_c{
+        position: absolute;
+        left: 700px;
+        top: 365px;
+     }
+
+     div#divphoto{
+        position: absolute;
+        left: 700px;
+        top: 460px;
+     }
+
+     div#divprofile-pass{
+        position: absolute;
+        left: 700px;
+        top: 150px;
+     }
+     div#mensages{
+        position: relative;
+        top: -45px;
+     }
+
+     div#divprofile-friends{
+        position: absolute;
+        left: 50px;
+        top: 360px;
+     }
+
+      div#divlabel-friends{
+        position: absolute;
+        left: 50px;
+        top: 330px;
+     }
+
+     #left {
+        width:48%;
+        display: inline-block;
+        position: absolute;
+        left: 50px;
+        top: 180px;
+     }
+     #right {
+	    width: 48%;
+  	    float: right;
+  	    display: inline-block;
+     	height: 100%;
+     	position: absolute;
+        left: 710px;
+        top: 180px;
+     }
+}
+
+

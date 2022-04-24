@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="icon" type="ico" href="../static/css/img/Icono.ico">
+</head>
+    <body>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="utf-8"/>
+            <link href="static/css/socnet-style.css" rel="stylesheet" type="text/css"/>
+            <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+            </style>
+            <title>
+                Inicio-SocNet
+            </title>
+            <script src="static/js/profile.js"></script>
+        </head>
+        <body>
+        <div id="containerProfile">
+            <nav>
+                 <ul>
+                     <a href="/"> <img src="../static/css/img/home-solid.png"alt=""> SocNet</a>
+                     <a id="hom1" href="/home"> <img src="../static/css/img/envelope-solid.png"alt=""> Inicio</a>
+                     <a id="hom2" href="logout"> <img id= "log1" src="../static/css/img/logout-solid.png"alt=""> Cerrar sesión ({{ nickname }})</a>
+                 </ul>
+            </nav>
+            <header>
+                <h1 id="h1Profile">
+                      Hola, {{ nickname }}
+                </h1>
+            </header>
+
+            <form id="formProfile" action="/profile" method="post" name="profile" enctype="multipart/form-data" onsubmit="return validateSignUpDHTML(this)"><ul class="errorMessages" style="..." id="errores_profile"></ul>
+                <div id="divprofile-nick">
+                     <label for="nickname">Editar nombre de usuario</label>
+                     <div class="inputs"><input id="nickname" maxlength="64" name="nickname" size="40" type="text" value="{{ nickname }}"/></div>
+                     <label for="email">Email</label>
+                     <div class="inputs"><input id="email" name="email" size="40" type="text" value="{{ email }}" readonly/></div>
+                </div>
+                 <div id="divfecha_c">
+                     <label for="date_birth">Fecha de nacimiento</label>
+                     <div class="inputs"><input id="date_birth" maxlength="64" name="date_birth" size="40" type="date" value="{{ date_birth }}"/></div>
+                 </div>
+                 <div id="divphoto">
+                     <label for="photo">Cambiar foto de perfil</label>
+                     <select id="photo" name="photo"> {% for photo in all_photo %} <option value="{{photo}}"> {{photo}}
+                     </option>{% endfor %} </select>
+                 </div>
+                <div id="divlabel-friends">
+                     <label for="friends">Añadir amigo: </label>
+                </div>
+                <div id="divprofile-friends">
+                     <select id="friends"  name="friends" size="10" style="margin:15px" multiple > {% for option in all_users %} <option value="{{ option }} " {% if option in friends %} selected {% endif %}> [╋] 👤 {{option}}
+                     </option>{% endfor %} </select>
+                </div>
+                <div id="divprofile-pass">
+                     <label for="passwd">Nueva contraseña</label>
+                     <div class="inputs"><input id="passwd" name="passwd" placeholder="**********" size="40" type="password" value="{{ passwd }}"/></div>
+                     <label for="confirm">Confirmar contraseña</label>
+                     <div class="inputs"><input id="confirm" name="confirm" placeholder="**********" size="40" type="password" value="{{ passwd }}"/></div>
+                </div>
+                <div id="divprofile-aceptar">
+                     <div class="inputs"><input id="accept_submit" name="accept_submit" type="submit" value="Guardar cambios"/></div></label>
+                     <img id="photoP" src="../static/css/img_avatar/{{photo}}"alt="">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link href="static/css/socnet-style.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="ico" href="../static/css/img/Icono.ico">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        </style>
+        <title>
+            Registrarse-SocNet
+        </title>
+        <script src="static/js/profile.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <nav>
+                 <ul>
+                     <a href="/"> <img src="../static/css/img/home-solid.png"alt=""> SocNet</a>
+                     <a href="login"> <img src="../static/css/img/user-solid.png"alt=""> Iniciar sesión</a>
+                 </ul>
+            </nav>
+            <header>
+                <h1>
+                    Registrarse
+                </h1>
+            </header>
+            <form action="signup" method="post" name="signup" enctype="multipart/form-data" onsubmit="return validateSignUpDHTML(this)"><ul class="errorMessages" style="..." id="errores_profile"></ul>
+                <label for="nickname">Nombre de usuario</label>
+				<div class="inputs"><input id="nickname" maxlength="64" name="nickname" size="35" type="text" value=""/></div>
+                <label for="email">Email</label>
+				<div class="inputs"><input id="email" name="email" size="35" type="text" value=""/></div>
+                <label for="date_birth">Fecha de nacimiento</label>
+				<div class="inputs"><input id="date_birth" name="date_birth" size="35" type="date" value=""/></div>
+                <label for="photo">Foto perfil</label>
+				<div class="inputs"><input id="photo" name="photo" size="35" type="text" value=""/></div>
+                <label for="passwd">Contraseña</label>
+				<div class="inputs"><input id="passwd" name="passwd" placeholder="**********" size="35" type="password" value=""/></div>
+                <label for="confirm">Confirmar contraseña</label>
+				<div class="inputs"><input id="confirm" name="confirm" placeholder="**********" size="35" type="password" value=""/></div>
+                <div class="inputs"><input id="signup_submit" name="signup_submit" type="submit" value="Registrarse"/></div>
+            </form>
+        </div>
+    </body>
+</html>

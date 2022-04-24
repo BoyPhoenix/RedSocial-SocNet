@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link href="static/css/socnet-style.css" rel="stylesheet" type="text/css"/>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+    <title>
+        Inicio - SocNet
+    </title>
+</head>
+<body>
+<h1>
+    Error
+</h1>
+Se encontró el siguiente error:
+---> {{ error_message }} <---
+<div>
+    <form action="{{ next }}" method="get">
+        <div class="inputs">
+            <input id="next" name="next" type="submit" value="Continuar"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

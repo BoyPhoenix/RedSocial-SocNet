@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link href="static/css/socnet-style.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="ico" href="../static/css/img/Icono.ico">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');</style>
+        <title>
+            Iniciar sesión-SocNet
+        </title>
+        <script src="static/js/login.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <nav>
+                 <ul>
+                     <a href="/"> <img src="../static/css/img/home-solid.png"alt=""> SocNet</a>
+                     <a href="signup"> <img src="../static/css/img/register-solid.png"alt=""> Registrarse</a>
+                 </ul>
+            </nav>
+            <header>
+                <h1>
+                    Iniciar sesión
+                </h1>
+            </header>
+              <form action="login" method="post" name="login" onsubmit="return validateLoginDHTML(this)"><ul class="errorMessages" style="..." id="errores_login"></ul>
+                   <label for="email">Email</label>
+                   <div class="inputs"><input id="email" size="35" name="email" type="text" value=""/></div>
+                   <label for="passwd">Contraseña</label>
+                   <div class="inputs"><input id="passwd"  size="35"  name="passwd" placeholder="**********" type="password" value=""/></div>
+                   <label></label><input id="remember_me" name="remember_me" type="checkbox" value="y"/><label>Recordar</label>
+                   <div class="inputs"><input id="login_submit" name="login_submit" type="submit" value="Iniciar sesión"/></div>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+
+
+

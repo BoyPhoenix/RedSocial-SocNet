@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link href="static/css/socnet-style.css" rel="stylesheet" type="text/css"/>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+    <title>
+        Inicio-SocNet
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="static/js/home.js"></script>
+    <link rel="stylesheet" href="static/css/emojionearea.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="static/js/emojionearea.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('form[name=home]').submit(function(evnt) {
+                if(! validateMessageDHTML(this)) {
+                    evnt.preventDefault()
+                }
+            })
+
+            $('select[name=friend]').change(updateFriendMessagesJQUERY)
+            $('input[name=select_friend]').click(showFriends)
+            $('input[name=cancel_friend]').click(function() {
+                $("#div_friends").hide()
+                $("#div_messages").show()
+            });
+            $('input[name="ok_friend"]').click(selectFriend)
+            updateFriendMessagesJQUERY()
+            $("#right").show()
+        });
+    </script>
+</head>
+<body onload="//updateFriendMessages(document.getElementById('friend'))">
+<div id="containerHome">
+    <nav>
+          <ul>
+             <a href="/"> <img src="../static/css/img/home-solid.png"alt=""> SocNet</a>
+             <a href="profile"> <img id="photoH" src="../static/css/img_avatar/{{photo}}"alt=""> Perfil</a>
+             <a href="logout"> <img id= "log" src="../static/css/img/logout-solid.png"alt=""> Cerrar sesión({{ nickname }})</a>
+
+         </ul>
+    </nav>
+        <header>
+                <h1 id="h1Home">
+                    SocNet
+                </h1>
+        </header>
+<label id="cumple">
+                    Tu cumpleaños: {{date_birth}}
+                </label>
+        <div id="left">
+                <form action="home" method="post" name="home">
+                <ul class="errorMessages" style="display:none" id="errores_home"></ul>
+                <input id="friend_copy" name="friend" type="hidden"/>
+                <label for="post">
+                    Dile algo a tus amigos:
+                </label>
+                <div class="inputs">
+                    <input id="post" maxlength="500" name="message" size="40" type="text" value=""/>
+                    <input id="post_submit" name="post_submit" type="submit" value="Enviar!"/>
+                    <div id="mensages">
+                        {% for message in messages %}
+                            {% if message[1] not in all_images %}
+                                <li>【{{message[1]}}】</li>
+                            {% endif %}
+                            {% if message[1] in all_images %}
+                                <li> <img id="msgImg" src="../static/css/img_post/{{message[1]}}"alt=""> </li>
+                            {% endif %}
+                         {% endfor %}
+                    </div>
+                    <button id="ocultarM" type="button" onclick="ocultar()"><img src="../static/css/img/eye-regular2.png" style="width: 25px;height: 20px;"/></button>
+                    <button id="mostrarM" type="button" onclick="mostrar()"><img src="../static/css/img/eye-regular.png" style="width: 25px;height: 20px;"/></button>
+                    <script>
+                        $(document).ready(function(){
+                            $("#post").emojioneArea({
+                                  pickerPosition: "bottom"
+                            });
+                        })
+                    </script>
+                </div>
+                </form>
+        </div>
+
+        <div id="right" style="display:none">
+            <form  id="div_messages">
+                <label for="post">
+                    Lo que tus amig@s están diciendo:
+                </label>
+                 <div style="padding-left:30px">
+                    <small>
+                        Mostrando mensajes escritos por:
+                        <select id="friend" name="friend" style="display:none" onchange="//updateFriendMessages(this)" >
+                            <option value="All">All</option>
+                            {% for friend in friends %}
+                                <option value="{{ friend }}" {% if friend == selected_friend %} selected {% endif %} >{{ friend }} </option>
+                            {% endfor %}
+                        </select>
+                        <span id="selected_friend">{{ selected_friend }} </span>
+                        <input id="select_friend" name="select_friend" type="button" value="Presiona y cambia de amig@"/>
+                        <button id="ocultarMA" type="button" onclick="ocultar2()"><img src="../static/css/img/eye-regular2.png" style="width: 25px;height: 20px;"/></button>
+                        <button id="mostrarMA" type="button" onclick="mostrar2()"><img src="../static/css/img/eye-regular.png" style="width: 25px;height: 20px;"/></button>
+                    </small>
+                </div>
+                <div id="messages" class="inputs"></div>
+            </form>
+            <form id="div_friends" style="display:none">
+                <label>Selecciona a un amigo para ver lo que dice:</label>
+                <div id="friends" style="margin:20px; width: 530px;">
+                    <div class='par' id='t0'><input id='check0' value='All' type='checkbox' onclick='pulsadoCheck(0)' />All</div>
+                    {% for friend in friends %}
+                        <div id='t{{loop.index}}' class='{{"impar" if (loop.index%2) else "par"}}'>
+                            <input id='check{{loop.index}}' value='{{friend}}' type='checkbox' onclick='pulsadoCheck({{loop.index}})'/>
+                            {{ friend }}
+                        </div>
+                    {% endfor %}
+                </div>
+                <input id="ok_friend" name="ok_friend" type="button" value="Ok"/>
+                <input id="cancel_friend" name="cancel_friend" type="button" value="Cancelar"/>
+               </form>
+        </div>
+
+</div>
+</body>
+</html>

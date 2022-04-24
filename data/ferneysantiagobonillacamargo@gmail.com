@@ -1,0 +1,1 @@
+{"user_name": "Santiago", "password": "123456789", "messages": [[1650492925.7738223, "Hola"], [1650492934.0350106, "Como estas?"], [1650492944.393853, "\ud83d\ude1c\ud83d\ude1c\ud83d\ude1c\ud83d\ude1c"], [1650492959.6441882, "\ud83c\udfb1\ud83c\udfb1"]], "email": "ferneysantiagobonillacamargo@gmail.com", "date_birth": "2001-10-27", "photo": "avatar1.png", "friends": []}
